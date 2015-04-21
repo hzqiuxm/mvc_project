@@ -12,6 +12,11 @@
 <head>
   <base href="<%=basePath%>">
 </head>
+<body>
+<br>
+22223
+<div align="right" style="background-color: red">
+  <iframe>
 <%
   out.clear();
   out = pageContext.pushBody();
@@ -43,7 +48,8 @@
     out.println(e.getMessage());
   }
 %>
-<body>
-<br>
+  </iframe>
+</div>
+
 </body>
 </html>

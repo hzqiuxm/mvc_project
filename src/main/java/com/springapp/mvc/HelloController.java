@@ -5,7 +5,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 
 /**
@@ -27,6 +29,19 @@ public class HelloController {
 	@RequestMapping(value = "getpdf", method = RequestMethod.GET)
 	public String getpdf(ModelMap model) {
 		return "test1";
+	}
+
+	@RequestMapping(value = "gettest", method = RequestMethod.GET)
+	public String getpdf1(
+			HttpServletRequest request,HttpServletResponse response
+	) throws IOException {
+
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("UTF-8");
+		response.getWriter().println("什么情况" + request.getSession());
+		System.out.println(request.getSession());
+
+		return null;
 	}
 
 }
